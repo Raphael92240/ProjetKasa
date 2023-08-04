@@ -1,0 +1,17 @@
+// Template Base
+@import "@/Assets/Style/Template/Template.scss";
+
+// Layouts
+@import "@/Assets/Style/Layout/Layout.scss";
+@import "@/Assets/Style/Layout/Header.scss";
+@import "@/Assets/Style/Layout/Footer.scss";
+
+// Components
+@import "@/Assets/Style/Components/Card.scss";
+@import "@/Assets/Style/Components/Hero.scss";
+
+// Pages
+@import "@/Assets/Style/Pages/About.scss";
+@import "@/Assets/Style/Pages/Home.scss";
+@import "@/Assets/Style/Pages/Logement.scss";
+@import "@/Assets/Style/Pages/Not404.scss";
