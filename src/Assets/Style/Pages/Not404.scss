@@ -1,0 +1,23 @@
+.error404{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $color-primary;
+        gap: 3em;
+    @media only screen and (max-width : 640px){
+
+    }
+
+    & h2{
+        font-size: 18em;
+        @media only screen and (max-width : 640px) {
+        }
+    }
+    
+    & a{
+        border-bottom: 1px solid #ff6060;
+        color: $color-primary;
+    }
+
+}

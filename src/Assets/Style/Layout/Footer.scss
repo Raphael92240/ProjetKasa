@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 57px;
+    background: $color-black;
+    color: #FFFFFF;
+
+    
+    @media only screen and (max-width : 640px) {
+        flex-direction: column;
+        margin-top: 30px;
+        justify-content: space-around;
+        height: 9em;
+    }
+
+    & img {
+        height: 95%;
+
+        @media only screen and (max-width : 640px) {
+            height: 4em;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.homepage{
+    & .homebanniere {
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+    
+        & img {
+            width: 100%;
+            object-fit: cover;
+            height: 14em;
+            border-radius: 25px;
+        }
+        & p {
+        position: absolute;
+        color: #FFFFFF;
+        font-size: 2.3em;
+        font-weight: 500;
+        }
+    }
+
+}
