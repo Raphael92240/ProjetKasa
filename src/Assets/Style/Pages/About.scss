@@ -1,8 +1,16 @@
 .aboutsection{
-& img {
-        width: 100%;
-            object-fit: cover;
-            height: 14em;
-            border-radius: 25px;
-}
+    & .banniereabout {
+            width: 100%;
+                object-fit: cover;
+                height: 14em;
+                border-radius: 25px;
+    }
+    & .liste-about{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-top: 20px;
+        width: 80%;
+        margin: auto;
+    }
 }

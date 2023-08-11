@@ -1,28 +1,31 @@
 import React from 'react';
 import IMGhome from '@/Assets/Images/Pages/home/IMGhome.png';
-//import { useNavigate } from 'react-router-dom';
+import listelogement  from '@/Assets/Api/Logement.json';
+
+import Banner from '@/Components/Banner/Banner.jsx';
+import Card from '@/Components/Card/Card.jsx';
+
+
 
 
 const Home = () => {
 
-   // let navigate =useNavigate()
-
-    //const navgallery = (LogementId) => {
-     //   navigate("../Logement/Logement"+LogementId,)
-    //}
-    
-    // <a onClick={(e) =>navgallery(e)}> gallery</a>
     return (
-        <section class="homepage">
-            <section class="homebanniere">
-                <img src={IMGhome} alt="about" />
-                <p>Chez vous, partout et ailleurs</p>
-            </section>
-            <section class="homegallery">
+        <section className="homepage">
+            <Banner image={IMGhome} title="Chez vous, partout et ailleurs" />
+            
+                <ul className='liste-logements'>
 
-
-
-            </section>
+                { 
+                    listelogement.map( logement => {
+                        return(
+                                <Card key={logement.id} id={logement.id} cover={logement.cover} title={logement.title} />
+                        )
+                    }) 
+                }
+                </ul>
+        
+          
         </section>
     );
 };
