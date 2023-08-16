@@ -1,0 +1,29 @@
+.logement{
+
+    & .logement-img{
+        width: 100%;
+        object-fit: cover;
+        height: 415px;
+    }
+
+
+
+
+
+
+
+    &.collapslogement {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       & li {
+           width: 35%;
+       }
+    }
+}
+
+
+
+
+
+

@@ -39,16 +39,35 @@ const Logement = () => {
 
 //<img src={logement.cover} alt="" />
 
-    return (
+if (isLoading) return (<h3>Chargement...</h3>)
+return (
         <section className="logement">
-            { 
-              
-              
+            <img className='logement-img' src={logement.pictures[0]} alt="" />
+            <div className='logementcontentinfo'>
+                <h2>{logement.title}</h2>
+                <p>{logement.location}</p>
+                <ul>
+                    <li>{logement.tags}</li>
+                </ul>
+                <ul>
+                    <li>{logement.host.name}</li>
+                    <li><img src={logement.host.picture} alt="" /></li>
+                </ul>
+            </div>
+            
 
-            }
 
-                
-                
+
+
+
+        {             
+            <ul className='collapslogement'>
+            <Collapsible key={logement.id + "about"}  title="description" description={logement.description} view="about"/>
+            <Collapsible key={logement.id + "logement"}  title="equipments" description={logement.equipments} view="logement"/>
+            </ul>
+        }
+
+  
             </section>
     );
 };
