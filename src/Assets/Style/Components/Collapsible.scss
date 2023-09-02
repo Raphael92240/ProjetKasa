@@ -10,14 +10,22 @@
                 border-radius: 10px 10px 5px 5px;
                 & .Dropdown_ArrowImg {
                         object-fit: contain;
+                        
+                }
+                & .Dropdown_ArrowImg:active{
+                    transform: rotate(180deg);
+                        transition: all 0.5s;
                 }
             }
             & .Dropdown_content {
-                border: 1px solid rgb(128, 123, 123);
-                padding: 0.5rem;
+                padding: 1rem;
+                border: none;
                 border-radius: 5px;
                 background-color: #F6F6F6;
                 color: #FF6060;
+                animation: apparitioncontent 1000ms forwards;
+
+                
             }
 
         }

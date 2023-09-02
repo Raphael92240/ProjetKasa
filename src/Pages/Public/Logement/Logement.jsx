@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Collapsible from '@/Components/Collapsible/Collapsible';
 import { LogementService } from '@/_Services/Logements.service';
 
+import Slideshow from '@/Components/Slideshow/Slideshow';
+import Profil from '@/Components/Profil/Profil';
+import Rating from '@/Components/Rating/Rating';
+import InfoLogement from '@/Components/InfoLogement/InfoLogement';
+import Tags from '@/Components/Tags/Tags';
+import Collapsible from '@/Components/Collapsible/Collapsible';
 
 
 const Logement = () => {
-
-
 
     const [logement, setLogement] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -16,9 +19,7 @@ const Logement = () => {
     let navigate = useNavigate();
 
     useEffect(() => {
-
         getInfo();
-
     }, [])
 
     const getInfo = async () => {
@@ -37,38 +38,34 @@ const Logement = () => {
     }
 
 
-//<img src={logement.cover} alt="" />
-
 if (isLoading) return (<h3>Chargement...</h3>)
+
+let listtags = [];
+    for (let i = 0; i<logement.tags.length; i++){
+        listtags.push(<li key={logement.tags[i]}>{logement.tags[i]}</li>)
+    }
+
 return (
         <section className="logement">
-            <img className='logement-img' src={logement.pictures[0]} alt="" />
+            <Slideshow lien={logement.pictures}/>
             <div className='logementcontentinfo'>
-                <h2>{logement.title}</h2>
-                <p>{logement.location}</p>
-                <ul>
-                    <li>{logement.tags}</li>
-                </ul>
-                <ul>
-                    <li>{logement.host.name}</li>
-                    <li><img src={logement.host.picture} alt="" /></li>
-                </ul>
+                <div className='logementcontentdescription'>
+                    <InfoLogement title={logement.title} location={logement.location}/>
+                    <Tags tags={logement.tags} />
+                </div>
+                <div className='logementcontenthost'>
+                    <Profil host={logement.host}/>
+                    <div className='logementhoststarrating'>
+                        <Rating rating={logement.rating} />
+                    </div>
+                </div>
             </div>
             
-
-
-
-
-
-        {             
             <ul className='collapslogement'>
-            <Collapsible key={logement.id + "about"}  title="description" description={logement.description} view="about"/>
-            <Collapsible key={logement.id + "logement"}  title="equipments" description={logement.equipments} view="logement"/>
+                <Collapsible key={logement.id + "about"}  title="description" description={logement.description} view="about"/>
+                <Collapsible key={logement.id + "logement"}  title="equipments" description={logement.equipments} view="logement"/>
             </ul>
-        }
-
-  
-            </section>
+        </section>
     );
 };
 
