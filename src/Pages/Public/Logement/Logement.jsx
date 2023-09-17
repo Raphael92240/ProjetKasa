@@ -40,10 +40,6 @@ const Logement = () => {
 
 if (isLoading) return (<h3>Chargement...</h3>)
 
-let listtags = [];
-    for (let i = 0; i<logement.tags.length; i++){
-        listtags.push(<li key={logement.tags[i]}>{logement.tags[i]}</li>)
-    }
 
 return (
         <section className="logement">

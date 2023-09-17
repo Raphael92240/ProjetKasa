@@ -10,8 +10,16 @@
     }
 
     & h2{
+
         font-size: 18em;
-        @media only screen and (max-width : 640px) {
+
+
+        @media screen and (max-width: 1024px) {
+            font-size: 14em;
+            }
+    
+        @media screen and (max-width: 640px) {
+            font-size: 9em;
         }
     }
     

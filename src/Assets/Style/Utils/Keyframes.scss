@@ -1,11 +1,13 @@
 @keyframes apparitioncontent {
     0% {
         transform: translateY(-2em);
+        display: none;
         
     }
 
     100% {
         transform: translateY(0);
+        display: block;
         
     }
 }
